@@ -1,0 +1,47 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Diary of a Caravaneer"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+AudioManager="*res://Scripts/Globals/audio_manager.gd"
+CraftingManager="*res://Scripts/Globals/crafting_manager.gd"
+DialogueManager="*res://Scripts/Globals/dialogue_manager.gd"
+EconomyManager="*res://Scripts/Globals/economy_manager.gd"
+EncounterManager="*res://Scripts/Globals/encounter_manager.gd"
+GameManager="*res://Scripts/Globals/game_manager.gd"
+InventoryManager="*res://Scripts/Globals/inventory_manager.gd"
+SceneManager="*res://Scripts/Globals/scene_manager.gd"
+TimeManager="*res://Scripts/Globals/time_manager.gd"
+UIManager="*res://Scripts/Globals/ui_manager.gd"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/size/window_width_override=1440
+window/size/window_height_override=810
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+theme/default_font_generate_mipmaps=true
+theme/custom_font="uid://8k63ayf3mvuv"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
