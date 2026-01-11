@@ -16,16 +16,17 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SignalManager="*res://Scripts/Globals/signal_manager.gd"
+TimeManager="*res://Scripts/Globals/time_manager.gd"
+GameManager="*res://Scripts/Globals/game_manager.gd"
+SceneManager="*res://Scripts/Globals/scene_manager.gd"
+UIManager="*res://Scripts/Globals/ui_manager.gd"
 AudioManager="*res://Scripts/Globals/audio_manager.gd"
 CraftingManager="*res://Scripts/Globals/crafting_manager.gd"
 DialogueManager="*res://Scripts/Globals/dialogue_manager.gd"
 EconomyManager="*res://Scripts/Globals/economy_manager.gd"
 EncounterManager="*res://Scripts/Globals/encounter_manager.gd"
-GameManager="*res://Scripts/Globals/game_manager.gd"
 InventoryManager="*res://Scripts/Globals/inventory_manager.gd"
-SceneManager="*res://Scripts/Globals/scene_manager.gd"
-TimeManager="*res://Scripts/Globals/time_manager.gd"
-UIManager="*res://Scripts/Globals/ui_manager.gd"
 
 [display]
 

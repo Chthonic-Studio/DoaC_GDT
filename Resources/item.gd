@@ -1,11 +1,9 @@
 class_name Item extends Resource
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+@export var id: String
+@export var display_name: String
+@export var description: String = ""
+@export var category: GameEnums.ItemCategory = GameEnums.ItemCategory.RAW_MATERIALS
+@export var tags: Array[String] = []	# e.g., ["Spice", "Herb"]
+@export var weight: float = 1.0
+@export var base_price: int = 10
