@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ed8mj4lbq4co"]
+
+[ext_resource type="Texture2D" uid="uid://cnwvmqq4x3sb0" path="res://Assets/Item Icons/#1 - Transparent Icons.png" id="1_3n25d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyin4"]
+atlas = ExtResource("1_3n25d")
+region = Rect2(0, 544, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6nsp"]
+atlas = ExtResource("1_3n25d")
+region = Rect2(64, 64, 32, 32)
+
+[node name="CityWantItem" type="HBoxContainer"]
+theme_override_constants/separation = -5
+
+[node name="ItemTexture" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_gyin4")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="PositiveNegative" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = SubResource("AtlasTexture_h6nsp")
+expand_mode = 1
+stretch_mode = 5

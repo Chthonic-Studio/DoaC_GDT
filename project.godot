@@ -29,10 +29,8 @@ UIManager="*res://Scripts/Globals/ui_manager.gd"
 
 [display]
 
-window/size/viewport_width=960
-window/size/viewport_height=540
-window/size/window_width_override=1440
-window/size/window_height_override=810
+window/size/viewport_width=1440
+window/size/viewport_height=810
 
 [gui]
 

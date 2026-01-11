@@ -1,0 +1,210 @@
+[gd_scene load_steps=2 format=3 uid="uid://divtmffpkb83j"]
+
+[ext_resource type="PackedScene" uid="uid://dc4undut3jlsc" path="res://UI/item_holder.tscn" id="1_wv7g1"]
+
+[node name="TradeScreen_ContentScroll" type="ScrollContainer"]
+custom_minimum_size = Vector2(360, 250)
+anchors_preset = -1
+anchor_right = 0.25
+anchor_bottom = 0.30864197
+offset_right = -360.0
+offset_bottom = -250.0
+follow_focus = true
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 6
+columns = 6
+
+[node name="ItemHolder" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder2" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder3" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder4" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder5" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder6" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder7" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder8" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder9" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder10" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder11" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder12" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder13" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder14" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder15" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder16" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder17" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder18" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder19" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder20" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder21" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder22" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder23" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder24" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder25" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder26" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder27" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder28" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder29" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder30" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder31" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder32" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder33" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder34" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder35" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder36" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder37" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder38" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder39" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder40" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder41" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder42" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder43" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder44" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder45" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder46" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder47" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder48" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder49" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder50" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder51" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder52" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder53" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder54" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder55" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder56" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder57" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder58" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder59" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder60" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder61" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder62" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder63" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2
+
+[node name="ItemHolder64" parent="GridContainer" instance=ExtResource("1_wv7g1")]
+layout_mode = 2

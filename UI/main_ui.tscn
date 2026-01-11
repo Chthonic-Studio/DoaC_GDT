@@ -1,9 +1,52 @@
-[gd_scene format=3 uid="uid://k108i7mxrha4"]
+[gd_scene load_steps=6 format=3 uid="uid://k108i7mxrha4"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" uid="uid://dxbrmd5frd4kf" path="res://UI/UI_Scripts/main_ui.gd" id="1_hvcg1"]
+[ext_resource type="PackedScene" uid="uid://dhf2mllppswmk" path="res://UI/gold_counter.tscn" id="2_u5gji"]
+[ext_resource type="PackedScene" uid="uid://mn1hmmem1mq8" path="res://UI/trade_screen.tscn" id="3_pdhop"]
+[ext_resource type="PackedScene" uid="uid://84q7hmk6bqqg" path="res://UI/town_title.tscn" id="4_ku8im"]
+[ext_resource type="PackedScene" uid="uid://dtyru14yd2v54" path="res://UI/town_notifications.tscn" id="5_c3pkt"]
+
+[node name="Main_UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hvcg1")
+
+[node name="GoldCounter" parent="." instance=ExtResource("2_u5gji")]
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = -20.0
+
+[node name="TradeScreen" parent="." instance=ExtResource("3_pdhop")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03541667
+anchor_top = 0.14444445
+anchor_right = 0.9611111
+anchor_bottom = 0.7209877
+offset_left = -3.8146973e-06
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TownTitle" parent="." instance=ExtResource("4_ku8im")]
+layout_mode = 1
+
+[node name="TownNotifications" parent="." instance=ExtResource("5_c3pkt")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8173611
+anchor_right = 1.0
+anchor_bottom = 0.19506173
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true

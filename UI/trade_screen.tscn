@@ -1,0 +1,628 @@
+[gd_scene load_steps=19 format=3 uid="uid://mn1hmmem1mq8"]
+
+[ext_resource type="Texture2D" uid="uid://p7mw422tfe3d" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Plain/8 Shop/1.png" id="1_afp83"]
+[ext_resource type="Script" uid="uid://dpchi5e0dm73q" path="res://UI/trade_screen.gd" id="1_i57ml"]
+[ext_resource type="Texture2D" uid="uid://dt1a3yx63b2tb" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Plain/2 Headers/4.png" id="2_i57ml"]
+[ext_resource type="FontFile" uid="uid://bjrirrayk4cty" path="res://Assets/Fonts/Beholden-Medium.ttf" id="3_q65h0"]
+[ext_resource type="FontFile" uid="uid://cdnnpfdyaer3" path="res://Assets/Fonts/Beholden-Italic.ttf" id="4_tls5n"]
+[ext_resource type="FontFile" uid="uid://brhg50s7a1mpy" path="res://Assets/Fonts/Beholden-Bold.ttf" id="5_8n287"]
+[ext_resource type="Texture2D" uid="uid://dektfxdlhcorn" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Plain/5 Mini Map/1.png" id="6_51fsq"]
+[ext_resource type="PackedScene" uid="uid://ccec8eihjog1d" path="res://UI/filters_hbox.tscn" id="7_gpcdg"]
+[ext_resource type="PackedScene" uid="uid://divtmffpkb83j" path="res://UI/trade_screen_content_scroll.tscn" id="8_2om06"]
+[ext_resource type="PackedScene" uid="uid://bh14i485rop0l" path="res://UI/item_description.tscn" id="9_ytneg"]
+[ext_resource type="Texture2D" uid="uid://d0hockgy8v72w" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Folding & Cutout/8 Shop/1.png" id="10_ghlr0"]
+[ext_resource type="FontFile" uid="uid://byohn4c5trl34" path="res://Assets/Fonts/Beholden-Bold-Italic.ttf" id="11_pl5yv"]
+[ext_resource type="PackedScene" uid="uid://bwnnelgphxf5" path="res://UI/barter_screen_item_entry.tscn" id="12_o6nwd"]
+[ext_resource type="Texture2D" uid="uid://cauuae465jyvf" path="res://Assets/UI/70 progress bars-53.png" id="13_m8l41"]
+[ext_resource type="Texture2D" uid="uid://b6p33p50707ae" path="res://Assets/UI/70 progress bars-54.png" id="14_0xjd7"]
+[ext_resource type="Texture2D" uid="uid://cnwvmqq4x3sb0" path="res://Assets/Item Icons/#1 - Transparent Icons.png" id="15_67ugp"]
+[ext_resource type="Texture2D" uid="uid://5xaeqcktdcuk" path="res://Assets/UI/1 Green Book/1 Sprites/Content/10 Emoji/1.png" id="16_uwv6o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5po14"]
+atlas = ExtResource("15_67ugp")
+region = Rect2(320, 384, 32, 32)
+
+[node name="TradeScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 49.0
+offset_top = 118.0
+offset_right = 1382.0
+offset_bottom = 585.0
+script = ExtResource("1_i57ml")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 21.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopScreen" type="NinePatchRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+texture = ExtResource("1_afp83")
+region_rect = Rect2(16, 16, 384, 424)
+
+[node name="Control" type="Control" parent="HBoxContainer/ShopScreen"]
+anchors_preset = 0
+offset_left = 78.0
+offset_top = 85.0
+offset_right = 420.0
+offset_bottom = 534.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/ShopScreen/Control"]
+custom_minimum_size = Vector2(160, 20)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25146198
+anchor_top = 0.008908686
+anchor_right = 0.99707603
+anchor_bottom = 0.08908686
+texture = ExtResource("2_i57ml")
+region_rect = Rect2(16, 24, 416, 72)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shopkeeper_Name" type="Label" parent="HBoxContainer/ShopScreen/Control/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12549016
+anchor_top = 0.10344805
+anchor_right = 0.8784314
+anchor_bottom = 0.6896549
+offset_right = -1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_q65h0")
+theme_override_font_sizes/font_size = 20
+text = "Shopkeeper Name"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/ShopScreen/Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 39.0
+offset_right = 249.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_tls5n")
+theme_override_font_sizes/font_size = 14
+text = "Left click to add to shopping list
+Right click to view item description"
+
+[node name="Shopkeeper_Relations" type="Label" parent="HBoxContainer/ShopScreen/Control/NinePatchRect"]
+layout_mode = 0
+anchor_top = 1.1944444
+anchor_right = 0.2
+anchor_bottom = 1.8888888
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_8n287")
+theme_override_font_sizes/font_size = 20
+text = "+99"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ShopScreen/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 7.0
+offset_right = 9.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ShopScreen/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/ShopScreen/Control/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="HBoxContainer/ShopScreen/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture = ExtResource("6_51fsq")
+region_rect = Rect2(24, 24, 176, 176)
+
+[node name="Shopkeeper_Portrait" type="TextureRect" parent="HBoxContainer/ShopScreen/Control/VBoxContainer/HBoxContainer/NinePatchRect2"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.15
+anchor_right = 0.85
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FiltersHbox" parent="HBoxContainer/ShopScreen/Control/VBoxContainer" instance=ExtResource("7_gpcdg")]
+layout_mode = 2
+
+[node name="TradeScreen_ContentScroll" parent="HBoxContainer/ShopScreen/Control/VBoxContainer" instance=ExtResource("8_2om06")]
+layout_mode = 2
+
+[node name="ItemDescription" parent="HBoxContainer/ShopScreen/Control/VBoxContainer" instance=ExtResource("9_ytneg")]
+layout_mode = 2
+
+[node name="BarterScreen" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/BarterScreen"]
+layout_mode = 2
+texture = ExtResource("10_ghlr0")
+region_rect = Rect2(48, 49, 320, 365)
+
+[node name="Control" type="Control" parent="HBoxContainer/BarterScreen/NinePatchRect"]
+custom_minimum_size = Vector2(285, 560)
+layout_mode = 1
+anchor_left = 0.092857145
+anchor_top = 0.06912442
+anchor_right = 0.9071429
+anchor_bottom = 0.9308756
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BarterTile" type="NinePatchRect" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture = ExtResource("2_i57ml")
+region_rect = Rect2(16, 24, 416, 72)
+
+[node name="Label" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterTile"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18421052
+anchor_top = 0.12
+anchor_right = 0.81578946
+anchor_bottom = 0.74
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_8n287")
+theme_override_font_sizes/font_size = 30
+text = "Barter Screen"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Modifiers"
+horizontal_alignment = 1
+
+[node name="Modifiers" type="HBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="TownStatusLabel" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Town Status:"
+
+[node name="ShopStatusLabel" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Shop Status:"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="TownStatusValue" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers/VBoxContainer2"]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_pl5yv")
+theme_override_font_sizes/font_size = 14
+text = "Stats"
+
+[node name="ShopStatusValue" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers/VBoxContainer2"]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_pl5yv")
+theme_override_font_sizes/font_size = 14
+text = "Stats"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="RegionStatusLabel" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Region Status:"
+
+[node name="WorldStatusLabel" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "World Status:"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers"]
+layout_mode = 2
+
+[node name="RegionStatusValue" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers/VBoxContainer4"]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_pl5yv")
+theme_override_font_sizes/font_size = 14
+text = "Stats"
+
+[node name="WorldStatusValue" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/Modifiers/VBoxContainer4"]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_pl5yv")
+theme_override_font_sizes/font_size = 14
+text = "Stats"
+
+[node name="YouBuy" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "You buy:"
+horizontal_alignment = 1
+
+[node name="BuyList" type="ScrollContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BuyList"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BarterScreen_ItemEntry" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BuyList/VBoxContainer" instance=ExtResource("12_o6nwd")]
+layout_mode = 2
+
+[node name="BarterScreen_ItemEntry2" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BuyList/VBoxContainer" instance=ExtResource("12_o6nwd")]
+layout_mode = 2
+
+[node name="BarterScreen_ItemEntry3" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BuyList/VBoxContainer" instance=ExtResource("12_o6nwd")]
+layout_mode = 2
+
+[node name="BarterScreen_ItemEntry4" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BuyList/VBoxContainer" instance=ExtResource("12_o6nwd")]
+layout_mode = 2
+
+[node name="TotalBought" type="HBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="TotalBought" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/TotalBought"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Total bought:"
+horizontal_alignment = 1
+
+[node name="TotalBoughtValue" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/TotalBought"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "999"
+horizontal_alignment = 1
+
+[node name="CaravanCapacity" type="HBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/CaravanCapacity"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_8n287")
+text = "Caravan Capacity:"
+
+[node name="CapacityProgressBar" type="TextureProgressBar" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/CaravanCapacity"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+value = 50.0
+rounded = true
+nine_patch_stretch = true
+texture_under = ExtResource("13_m8l41")
+texture_over = ExtResource("13_m8l41")
+texture_progress = ExtResource("14_0xjd7")
+tint_progress = Color(0.44291076, 0.44291076, 0.44291073, 1)
+
+[node name="CaravanFullWarning" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/CaravanCapacity/CapacityProgressBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13125
+anchor_top = 0.11764706
+anchor_right = 0.86875
+anchor_bottom = 1.117647
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_8n287")
+theme_override_font_sizes/font_size = 14
+text = "CARAVAN IS FULL!"
+metadata/_edit_use_anchors_ = true
+
+[node name="YouSell" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "You sell:"
+horizontal_alignment = 1
+
+[node name="SellList" type="ScrollContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/SellList"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BarterScreen_ItemEntry" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/SellList/VBoxContainer" instance=ExtResource("12_o6nwd")]
+layout_mode = 2
+
+[node name="BarterScreen_ItemEntry2" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/SellList/VBoxContainer" instance=ExtResource("12_o6nwd")]
+layout_mode = 2
+
+[node name="BarterScreen_ItemEntry3" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/SellList/VBoxContainer" instance=ExtResource("12_o6nwd")]
+layout_mode = 2
+
+[node name="BarterScreen_ItemEntry4" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/SellList/VBoxContainer" instance=ExtResource("12_o6nwd")]
+layout_mode = 2
+
+[node name="TotalSold" type="HBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="TotalSold" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/TotalSold"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Total sold:"
+horizontal_alignment = 1
+
+[node name="TotalSoldValue" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/TotalSold"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "999"
+horizontal_alignment = 1
+
+[node name="ShopkeeperBartering" type="HBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/ShopkeeperBartering"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_8n287")
+text = "Shopkeeper bartering gold:"
+
+[node name="GoldTexture" type="TextureRect" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/ShopkeeperBartering"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_5po14")
+expand_mode = 3
+
+[node name="ShopkeeperBarteringGoldValue" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/ShopkeeperBartering"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_8n287")
+text = "900"
+
+[node name="BarterDialogueBox" type="HBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterDialogueBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("6_51fsq")
+region_rect = Rect2(24, 24, 176, 176)
+
+[node name="Shopkeeper_Portrait" type="TextureRect" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterDialogueBox/NinePatchRect2"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.15
+anchor_right = 0.85
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterDialogueBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterDialogueBox/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_q65h0")
+text = "Shopkeeper Name"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterDialogueBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_tls5n")
+theme_override_font_sizes/normal_font_size = 14
+text = "\"Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet\""
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterDialogueBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="ShopkeeperMood" type="TextureRect" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterDialogueBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("16_uwv6o")
+
+[node name="ConfirmTrade" type="Button" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterDialogueBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58944786, 0.9999997, 0.32802114, 1)
+text = "Confirm"
+
+[node name="BarterTrade" type="Button" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterDialogueBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Barter"
+
+[node name="CancelTrade" type="Button" parent="HBoxContainer/BarterScreen/NinePatchRect/Control/VBoxContainer/BarterDialogueBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87, 0.04350001, 0.04350001, 1)
+text = "Cancel"
+
+[node name="PlayerScreen" type="NinePatchRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+texture = ExtResource("1_afp83")
+region_rect = Rect2(16, 16, 384, 424)
+
+[node name="Control" type="Control" parent="HBoxContainer/PlayerScreen"]
+anchors_preset = 0
+offset_left = 89.0
+offset_top = 89.0
+offset_right = 415.0
+offset_bottom = 573.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/PlayerScreen/Control"]
+custom_minimum_size = Vector2(160, 20)
+layout_mode = 0
+offset_left = 79.0
+offset_top = 1.0
+offset_right = 334.0
+offset_bottom = 37.0
+texture = ExtResource("2_i57ml")
+region_rect = Rect2(16, 24, 416, 72)
+
+[node name="CaravanTitle" type="Label" parent="HBoxContainer/PlayerScreen/Control/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12549016
+anchor_top = 0.10344805
+anchor_right = 0.8784314
+anchor_bottom = 0.6896549
+offset_right = -1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_q65h0")
+theme_override_font_sizes/font_size = 20
+text = "Caravan Inventory"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer/PlayerScreen/Control/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10980392
+anchor_top = 1.0833334
+anchor_right = 0.8666667
+anchor_bottom = 2.1111112
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_tls5n")
+theme_override_font_sizes/font_size = 14
+text = "Left click to add to shopping list
+Right click to view item description"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PlayerScreen/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Barter" type="Label" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_8n287")
+theme_override_font_sizes/font_size = 15
+text = "Barter"
+
+[node name="Renown" type="Label" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_8n287")
+theme_override_font_sizes/font_size = 15
+text = "Renown"
+
+[node name="Label3" type="Label" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_8n287")
+theme_override_font_sizes/font_size = 15
+text = "Stats"
+
+[node name="Capacity" type="Label" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_8n287")
+theme_override_font_sizes/font_size = 15
+text = "Capacity"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="BarterLvl" type="Label" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "1/99"
+
+[node name="RenownValue" type="Label" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "1/99"
+
+[node name="Label4" type="Label" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Stats"
+
+[node name="CurrentCapacity" type="Label" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "999/999"
+
+[node name="FiltersHbox" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer" instance=ExtResource("7_gpcdg")]
+layout_mode = 2
+
+[node name="TradeScreen_ContentScroll" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer" instance=ExtResource("8_2om06")]
+layout_mode = 2
+
+[node name="ItemDescription" parent="HBoxContainer/PlayerScreen/Control/VBoxContainer" instance=ExtResource("9_ytneg")]
+layout_mode = 2

@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtyru14yd2v54"]
+
+[ext_resource type="Texture2D" uid="uid://bbek3nhud4brm" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Folding & Cutout/4 Notification/1.png" id="1_ndnux"]
+[ext_resource type="Script" uid="uid://54jnwmbquyl6" path="res://UI/town_notifications.gd" id="1_qqp8m"]
+[ext_resource type="FontFile" uid="uid://brhg50s7a1mpy" path="res://Assets/Fonts/Beholden-Bold.ttf" id="2_qqp8m"]
+[ext_resource type="PackedScene" uid="uid://ed8mj4lbq4co" path="res://UI/city_want_item.tscn" id="3_xw3c8"]
+
+[node name="TownNotifications" type="Control"]
+custom_minimum_size = Vector2(263, 158)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1176.0
+offset_top = 1.0
+offset_right = 1439.0
+offset_bottom = 159.0
+script = ExtResource("1_qqp8m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+texture = ExtResource("1_ndnux")
+region_rect = Rect2(16, 8, 256, 64)
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/NinePatchRect"]
+layout_mode = 0
+anchor_left = 0.12927757
+anchor_top = 0.24
+anchor_right = 0.9961977
+anchor_bottom = 0.76
+metadata/_edit_use_anchors_ = true
+
+[node name="Barter" type="Label" parent="VBoxContainer/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qqp8m")
+theme_override_font_sizes/font_size = 15
+text = "Town Status:"
+
+[node name="Barter2" type="Label" parent="VBoxContainer/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qqp8m")
+theme_override_font_sizes/font_size = 15
+text = "Town Status"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+texture = ExtResource("1_ndnux")
+region_rect = Rect2(16, 8, 256, 64)
+metadata/_edit_use_anchors_ = true
+
+[node name="Barter" type="Label" parent="VBoxContainer/NinePatchRect2"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 16.0
+offset_right = 118.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qqp8m")
+theme_override_font_sizes/font_size = 15
+text = "Want:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/NinePatchRect2"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 9.0
+offset_right = 257.0
+offset_bottom = 41.0
+
+[node name="CityWantItem" parent="VBoxContainer/NinePatchRect2/HBoxContainer" instance=ExtResource("3_xw3c8")]
+layout_mode = 2
+
+[node name="CityWantItem2" parent="VBoxContainer/NinePatchRect2/HBoxContainer" instance=ExtResource("3_xw3c8")]
+layout_mode = 2
+
+[node name="CityWantItem3" parent="VBoxContainer/NinePatchRect2/HBoxContainer" instance=ExtResource("3_xw3c8")]
+layout_mode = 2
+
+[node name="CityWantItem4" parent="VBoxContainer/NinePatchRect2/HBoxContainer" instance=ExtResource("3_xw3c8")]
+layout_mode = 2
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+texture = ExtResource("1_ndnux")
+region_rect = Rect2(16, 8, 256, 64)
+metadata/_edit_use_anchors_ = true

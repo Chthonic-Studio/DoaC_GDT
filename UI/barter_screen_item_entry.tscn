@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwnnelgphxf5"]
+
+[ext_resource type="Texture2D" uid="uid://chyyucilqfgtk" path="res://Assets/UI/1 Green Book/1 Sprites/Content/1 Items/7.png" id="1_fn5qn"]
+[ext_resource type="FontFile" uid="uid://brhg50s7a1mpy" path="res://Assets/Fonts/Beholden-Bold.ttf" id="2_5f4kb"]
+[ext_resource type="Texture2D" uid="uid://cnwvmqq4x3sb0" path="res://Assets/Item Icons/#1 - Transparent Icons.png" id="3_bk3t3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odbpc"]
+atlas = ExtResource("3_bk3t3")
+region = Rect2(320, 384, 32, 32)
+
+[node name="BarterScreen_ItemEntry" type="HBoxContainer"]
+
+[node name="ItemTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+texture = ExtResource("1_fn5qn")
+
+[node name="ItemName" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5f4kb")
+text = "Item Name"
+
+[node name="ItemQuantity" type="LineEdit" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5f4kb")
+theme_override_font_sizes/font_size = 16
+text = "x 1"
+max_length = 3
+
+[node name="GoldTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_odbpc")
+expand_mode = 3
+
+[node name="GoldValue" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5f4kb")
+text = "-999"

@@ -1,0 +1,211 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccec8eihjog1d"]
+
+[ext_resource type="Texture2D" uid="uid://csx3761b7vtls" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Folding & Cutout/5 Mini Map/1.png" id="1_026bo"]
+[ext_resource type="Texture2D" uid="uid://cnwvmqq4x3sb0" path="res://Assets/Item Icons/#1 - Transparent Icons.png" id="2_uw1ky"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5odo"]
+atlas = ExtResource("2_uw1ky")
+region = Rect2(0, 544, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34jgu"]
+atlas = ExtResource("2_uw1ky")
+region = Rect2(96, 544, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7du3f"]
+atlas = ExtResource("2_uw1ky")
+region = Rect2(32, 480, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwqwa"]
+atlas = ExtResource("2_uw1ky")
+region = Rect2(64, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg5y8"]
+atlas = ExtResource("2_uw1ky")
+region = Rect2(384, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8maku"]
+atlas = ExtResource("2_uw1ky")
+region = Rect2(320, 416, 32, 32)
+
+[node name="FiltersHbox" type="HBoxContainer"]
+alignment = 1
+
+[node name="FilterBG" type="NinePatchRect" parent="."]
+modulate = Color(0.9411765, 0.9490196, 0.8352941, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_026bo")
+region_rect = Rect2(24, 24, 176, 176)
+
+[node name="Filter_RawMaterials" type="TextureRect" parent="FilterBG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_r5odo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_RawMaterials" type="Button" parent="FilterBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Raw Materials"
+toggle_mode = true
+flat = true
+
+[node name="FilterBG2" type="NinePatchRect" parent="."]
+modulate = Color(0.9411765, 0.9490196, 0.8352941, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_026bo")
+region_rect = Rect2(24, 24, 176, 176)
+
+[node name="Filter_CraftedGoods" type="TextureRect" parent="FilterBG2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_34jgu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_CraftedGoods" type="Button" parent="FilterBG2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Crafted Goods"
+toggle_mode = true
+flat = true
+
+[node name="FilterBG3" type="NinePatchRect" parent="."]
+modulate = Color(0.9411765, 0.9490196, 0.8352941, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_026bo")
+region_rect = Rect2(24, 24, 176, 176)
+
+[node name="Filter_Foodstuffs" type="TextureRect" parent="FilterBG3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_7du3f")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Foodstuffs" type="Button" parent="FilterBG3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Foodstuffs"
+toggle_mode = true
+flat = true
+
+[node name="FilterBG4" type="NinePatchRect" parent="."]
+modulate = Color(0.9411765, 0.9490196, 0.8352941, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_026bo")
+region_rect = Rect2(24, 24, 176, 176)
+
+[node name="Filter_Tools" type="TextureRect" parent="FilterBG4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_rwqwa")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Tools" type="Button" parent="FilterBG4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Tools & Equipment"
+toggle_mode = true
+flat = true
+
+[node name="FilterBG5" type="NinePatchRect" parent="."]
+modulate = Color(0.9411765, 0.9490196, 0.8352941, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_026bo")
+region_rect = Rect2(24, 24, 176, 176)
+
+[node name="Filter_Potions" type="TextureRect" parent="FilterBG5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_mg5y8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Potions" type="Button" parent="FilterBG5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Luxuries"
+toggle_mode = true
+flat = true
+
+[node name="FilterBG6" type="NinePatchRect" parent="."]
+modulate = Color(0.9411765, 0.9490196, 0.8352941, 1)
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_026bo")
+region_rect = Rect2(24, 24, 176, 176)
+
+[node name="Filter_Misc" type="TextureRect" parent="FilterBG6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8maku")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Misc" type="Button" parent="FilterBG6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Miscellaneous"
+toggle_mode = true
+flat = true

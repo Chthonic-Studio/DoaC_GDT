@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://siyv637wx76s"]
+
+[node name="WorldMap" type="Node2D"]
+
+[node name="Ground" type="TileMapLayer" parent="."]
+
+[node name="Walls" type="TileMapLayer" parent="."]
+
+[node name="Buildings" type="TileMapLayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerCaravan" type="CharacterBody2D" parent="."]

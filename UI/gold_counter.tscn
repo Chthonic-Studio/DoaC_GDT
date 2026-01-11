@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhf2mllppswmk"]
+
+[ext_resource type="Texture2D" uid="uid://bgjonndfnrmjl" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Plain/9 Rewards/1.png" id="1_1ojqf"]
+[ext_resource type="Script" uid="uid://bsimvfxd625pu" path="res://UI/gold_counter.gd" id="1_77aph"]
+[ext_resource type="Texture2D" uid="uid://cnwvmqq4x3sb0" path="res://Assets/Item Icons/#1 - Transparent Icons.png" id="2_1ojqf"]
+[ext_resource type="FontFile" uid="uid://brhg50s7a1mpy" path="res://Assets/Fonts/Beholden-Bold.ttf" id="3_bcgqi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77aph"]
+atlas = ExtResource("2_1ojqf")
+region = Rect2(320, 384, 32, 32)
+
+[node name="GoldCounter" type="Control"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 3
+anchor_right = 0.20833333
+anchor_bottom = 0.14814815
+offset_right = -300.0
+offset_bottom = -120.0
+script = ExtResource("1_77aph")
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -16.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1ojqf")
+region_rect = Rect2(8, 16, 400, 176)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.5
+offset_top = 26.0
+offset_right = -11.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_77aph")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="GoldLabel" type="Label" parent="NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bcgqi")
+theme_override_font_sizes/font_size = 35
+text = "Gold:"
+
+[node name="GoldCount" type="Label" parent="NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "100"
