@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://mn1hmmem1mq8"]
 
 [ext_resource type="Texture2D" uid="uid://p7mw422tfe3d" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Plain/8 Shop/1.png" id="1_afp83"]
-[ext_resource type="Script" uid="uid://dpchi5e0dm73q" path="res://UI/trade_screen.gd" id="1_i57ml"]
+[ext_resource type="Script" uid="uid://dpchi5e0dm73q" path="res://UI/UI_Scripts/trade_screen.gd" id="1_i57ml"]
 [ext_resource type="Texture2D" uid="uid://dt1a3yx63b2tb" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Plain/2 Headers/4.png" id="2_i57ml"]
 [ext_resource type="FontFile" uid="uid://bjrirrayk4cty" path="res://Assets/Fonts/Beholden-Medium.ttf" id="3_q65h0"]
 [ext_resource type="FontFile" uid="uid://cdnnpfdyaer3" path="res://Assets/Fonts/Beholden-Italic.ttf" id="4_tls5n"]

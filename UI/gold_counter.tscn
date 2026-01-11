@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhf2mllppswmk"]
 
 [ext_resource type="Texture2D" uid="uid://bgjonndfnrmjl" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Plain/9 Rewards/1.png" id="1_1ojqf"]
-[ext_resource type="Script" uid="uid://bsimvfxd625pu" path="res://UI/gold_counter.gd" id="1_77aph"]
+[ext_resource type="Script" uid="uid://bsimvfxd625pu" path="res://UI/UI_Scripts/gold_counter.gd" id="1_77aph"]
 [ext_resource type="Texture2D" uid="uid://cnwvmqq4x3sb0" path="res://Assets/Item Icons/#1 - Transparent Icons.png" id="2_1ojqf"]
 [ext_resource type="FontFile" uid="uid://brhg50s7a1mpy" path="res://Assets/Fonts/Beholden-Bold.ttf" id="3_bcgqi"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dtyru14yd2v54"]
 
 [ext_resource type="Texture2D" uid="uid://bbek3nhud4brm" path="res://Assets/UI/1 Green Book/1 Sprites/Paper UI Pack/Paper UI/Folding & Cutout/4 Notification/1.png" id="1_ndnux"]
-[ext_resource type="Script" uid="uid://54jnwmbquyl6" path="res://UI/town_notifications.gd" id="1_qqp8m"]
+[ext_resource type="Script" uid="uid://54jnwmbquyl6" path="res://UI/UI_Scripts/town_notifications.gd" id="1_qqp8m"]
 [ext_resource type="FontFile" uid="uid://brhg50s7a1mpy" path="res://Assets/Fonts/Beholden-Bold.ttf" id="2_qqp8m"]
 [ext_resource type="PackedScene" uid="uid://ed8mj4lbq4co" path="res://UI/city_want_item.tscn" id="3_xw3c8"]
 
