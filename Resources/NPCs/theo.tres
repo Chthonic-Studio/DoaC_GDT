@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=2 format=3 uid="uid://b845laq85nj2f"]
+
+[ext_resource type="Script" uid="uid://ctyye4c2rnij2" path="res://Resources/npc.gd" id="1_f7v1v"]
+
+[resource]
+script = ExtResource("1_f7v1v")
+id = "theo"
+name = "Theo"
+metadata/_custom_type_script = "uid://ctyye4c2rnij2"

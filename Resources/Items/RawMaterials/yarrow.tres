@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cj08yuoqthibd"]
+
+[ext_resource type="Texture2D" uid="uid://cnwvmqq4x3sb0" path="res://Assets/Item Icons/#1 - Transparent Icons.png" id="1_3nuda"]
+[ext_resource type="Script" uid="uid://b7yjqskauygb5" path="res://Resources/item.gd" id="1_sr2qn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb7xu"]
+atlas = ExtResource("1_3nuda")
+region = Rect2(64, 384, 32, 32)
+
+[resource]
+script = ExtResource("1_sr2qn")
+icon = SubResource("AtlasTexture_tb7xu")
+metadata/_custom_type_script = "uid://b7yjqskauygb5"

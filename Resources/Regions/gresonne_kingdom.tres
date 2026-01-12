@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Region" load_steps=2 format=3 uid="uid://drjf0xxj8optg"]
+
+[ext_resource type="Script" uid="uid://kmyxbkhat212" path="res://Resources/region.gd" id="1_w77bx"]
+
+[resource]
+script = ExtResource("1_w77bx")
+metadata/_custom_type_script = "uid://kmyxbkhat212"

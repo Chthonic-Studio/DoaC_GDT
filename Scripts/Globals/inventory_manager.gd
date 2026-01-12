@@ -1,11 +1,40 @@
 extends Node
 
+var items: Dictionary = {}	# {item_id: count}
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func add_item(item_id: String, amount: int = 1) -> void:
+	items[item_id] = items.get(item_id, 0) + amount
+	SignalManager.emit_inventory_changed()
+	SignalManager.emit_capacity_changed(get_current_weight(), GameManager.max_capacity)
 
+func remove_item(item_id: String, amount: int = 1) -> bool:
+	if not items.has(item_id) or items[item_id] < amount:
+		return false
+	items[item_id] -= amount
+	if items[item_id] <= 0:
+		items.erase(item_id)
+	SignalManager.emit_inventory_changed()
+	SignalManager.emit_capacity_changed(get_current_weight(), GameManager.max_capacity)
+	return true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func get_count(item_id: String) -> int:
+	return items.get(item_id, 0)
+
+func get_current_weight() -> float:
+	var total: float = 0.0
+	for id in items.keys():
+		var def: Item = _get_item_def(id)
+		if def:
+			total += def.weight * items[id]
+	return total
+
+func can_fit(item_id: String, amount: int) -> bool:
+	var def: Item = _get_item_def(item_id)
+	if not def:
+		return false
+	var projected := get_current_weight() + def.weight * amount
+	return projected <= GameManager.max_capacity
+
+func _get_item_def(id: String) -> Item:
+	# TODO: Replace with your item DB lookup (preload, dictionary, or ResourceLoader cache).
+	return null

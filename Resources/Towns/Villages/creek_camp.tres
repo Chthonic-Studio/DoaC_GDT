@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Town" load_steps=4 format=3 uid="uid://7o5pktk73gi4"]
+
+[ext_resource type="Script" uid="uid://bwdfoc0arg81n" path="res://Resources/town.gd" id="1_fq14k"]
+[ext_resource type="Script" uid="uid://ctyye4c2rnij2" path="res://Resources/npc.gd" id="2_g6a00"]
+[ext_resource type="Script" uid="uid://clueknvd06ffg" path="res://Resources/demand_entry.gd" id="3_avv2o"]
+
+[resource]
+script = ExtResource("1_fq14k")
+metadata/_custom_type_script = "uid://bwdfoc0arg81n"
