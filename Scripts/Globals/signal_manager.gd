@@ -10,6 +10,10 @@ signal mood_changed(shopkeeper_id: String, mood_value: float)
 signal trade_preview_updated(buy_total: int, sell_total: int, weight_after: float)
 signal trade_committed(town_id: String)
 
+# New: NPC runtime signals for UI sync without direct node references.
+signal npc_gold_changed(npc_id: String, gold: int)
+signal npc_stock_changed(npc_id: String, item_id: String, amount: int)
+
 ## Helper emitters keep all scripts decoupled; call these instead of direct emit where possible.
 func emit_gold_changed(value: int) -> void:
 	emit_signal("gold_changed", value)
@@ -37,3 +41,9 @@ func emit_trade_preview_updated(buy_total: int, sell_total: int, weight_after: f
 
 func emit_trade_committed(town_id: String) -> void:
 	emit_signal("trade_committed", town_id)
+
+func emit_npc_gold_changed(npc_id: String, gold: int) -> void:
+	emit_signal("npc_gold_changed", npc_id, gold)
+
+func emit_npc_stock_changed(npc_id: String, item_id: String, amount: int) -> void:
+	emit_signal("npc_stock_changed", npc_id, item_id, amount)

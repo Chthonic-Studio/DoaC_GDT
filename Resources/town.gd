@@ -7,7 +7,8 @@ class_name Town extends Resource
 @export var status: GameEnums.Status = GameEnums.Status.STABLE
 @export var reputation: int = 0				# player vs town, -100..100
 @export var stock_speed: float = 1.0
-@export var tax_rate: float = 0.1				# applied to buys and sells
+@export var tax_rate: float = 0.1				# legacy base tax for compatibility
+@export var base_tax_rate: float = 0.1			# preferred base tax; used when present
 @export var wanted_pool: Array[String] = []		# item ids eligible to be picked as wanted
 @export var unwanted_pool: Array[String] = []	# item ids eligible to be picked as unwanted
 @export var wanted_dynamic: Array[DemandEntry] = []

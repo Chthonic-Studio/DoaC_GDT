@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bdxcvbfyywcg7" path="res://Scripts/town_node.gd" id="4_21xkr"]
 [ext_resource type="Script" uid="uid://cc0nb7boldv2b" path="res://Scripts/npc_node.gd" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://bsf1ybw5w63fy" path="res://Scripts/player_data.gd" id="6_344ge"]
-[ext_resource type="Script" uid="uid://beh73dfvlpbaq" path="res://Scripts/Globals/inventory_manager.gd" id="7_ynf5e"]
+[ext_resource type="Script" uid="uid://beh73dfvlpbaq" path="res://Scripts/inventory_manager.gd" id="7_ynf5e"]
 [ext_resource type="Script" uid="uid://d1hq3urr16112" path="res://Scripts/player_flags.gd" id="8_hptm8"]
 
 [node name="Main" type="Node2D"]
@@ -16,6 +16,8 @@ visible = false
 
 [node name="Market_State" type="Node" parent="."]
 script = ExtResource("2_jjvhh")
+gold_drift_rate = null
+stock_drift_rate = null
 
 [node name="Robenbaurt_Kingdom" type="Node" parent="Market_State"]
 script = ExtResource("3_kry3j")

@@ -1,6 +1,11 @@
 extends Node
+class_name InventoryManager
 
 var items: Dictionary = {}	# {item_id: count}
+
+func _ready() -> void:
+	# Register this scene instance into GameManager so everyone can access it safely.
+	GameManager.register_inventory_manager(self)
 
 func add_item(item_id: String, amount: int = 1) -> void:
 	items[item_id] = items.get(item_id, 0) + amount
@@ -36,5 +41,5 @@ func can_fit(item_id: String, amount: int) -> bool:
 	return projected <= GameManager.max_capacity
 
 func _get_item_def(id: String) -> Item:
-	# TODO: Replace with your item DB lookup (preload, dictionary, or ResourceLoader cache).
-	return null
+	# Centralized lookup via ItemDatabase for consistency and caching.
+	return ItemDatabase.get_item(id)

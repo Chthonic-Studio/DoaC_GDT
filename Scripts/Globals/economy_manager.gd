@@ -10,7 +10,9 @@ func get_buy_unit_price(item_id: String, quantity: int, town: Town, shop: NPC, r
 	var mood_factor: float = _mood_factor(shop.mood_value, true)
 	var bulk_factor: float = _bulk_diminishing(quantity, true)
 	var wanted_bonus: float = _wanted_bonus(item_id, town)
-	var final_price: float = base_price * scope_multiplier * mood_factor * wanted_bonus
+	var npc_item_factor: float = _npc_item_modifier(item_id, shop)
+	var tax_factor: float = _tax_multiplier(town, region_status, world_status)
+	var final_price: float = base_price * scope_multiplier * mood_factor * wanted_bonus * npc_item_factor * tax_factor
 	final_price *= bulk_factor
 	return int(round(final_price))
 
@@ -24,17 +26,33 @@ func get_sell_unit_price(item_id: String, quantity: int, town: Town, shop: NPC, 
 	var mood_factor: float = _mood_factor(shop.mood_value, false)
 	var bulk_factor: float = _bulk_diminishing(quantity, false)
 	var wanted_bonus: float = _wanted_bonus(item_id, town)
-	var final_price: float = base_price * scope_multiplier * mood_factor * wanted_bonus
+	var npc_item_factor: float = _npc_item_modifier(item_id, shop)
+	var tax_factor: float = _tax_multiplier(town, region_status, world_status)
+	var final_price: float = base_price * scope_multiplier * mood_factor * wanted_bonus * npc_item_factor * tax_factor
 	final_price *= bulk_factor
 	return int(round(final_price))
 
 ## Builds the tax line (positive => player pays). Applies to buys and sells.
 func build_tax_line(buy_total: int, sell_total: int, town: Town, region_status: GameEnums.Status, world_status: GameEnums.Status) -> int:
-	var tax_rate: float = _tax_rate(town, region_status, world_status)
+	var tax_rate: float = _effective_tax_rate(town, region_status, world_status)
 	var taxable: float = float(max(0, buy_total) + max(0, sell_total))
 	return int(round(taxable * tax_rate))
 
 # --- Internal modular pieces -----------------------------------------------
+
+func _npc_item_modifier(item_id: String, shop: NPC) -> float:
+	# Applies the per-item modifier from the NPC resource; null/missing defaults to 0 => factor 1.0
+	var modifier: float = 0.0
+	for entry in shop.sells:
+		if entry.get("item_id", "") == item_id:
+			modifier = entry.get("price_modifier", 0.0)
+			break
+	for entry in shop.buys:
+		if entry.get("item_id", "") == item_id:
+			# If both lists contain the item, buys overrides sells for selling price. Same multiplier used for both directions.
+			modifier = entry.get("price_modifier", modifier)
+			break
+	return 1.0 + modifier
 
 func _scope_multiplier(item_id: String, town: Town, shop: NPC, region_status: GameEnums.Status, world_status: GameEnums.Status, is_buy: bool) -> float:
 	var town_factor: float = _status_to_factor(town.status)
@@ -92,8 +110,21 @@ func _wanted_bonus(item_id: String, town: Town) -> float:
 			bonus -= abs(entry.intensity)
 	return max(0.25, bonus)	# clamp so it never hits zero or negative
 
-func _tax_rate(town: Town, region_status: GameEnums.Status, world_status: GameEnums.Status) -> float:
-	var rate: float = town.tax_rate
+func _tax_multiplier(town: Town, region_status: GameEnums.Status, world_status: GameEnums.Status) -> float:
+	# Multiplier form used directly on price (1 + effective_tax_rate).
+	return 1.0 + _effective_tax_rate(town, region_status, world_status)
+
+func _effective_tax_rate(town: Town, region_status: GameEnums.Status, world_status: GameEnums.Status) -> float:
+	# Base tax is defined on the Town resource; adjusted by status and economic power.
+	var base_rate: float = 0.1
+	if "base_tax_rate" in town:
+		base_rate = town.base_tax_rate
+	elif "tax_rate" in town:
+		# Backward compatibility with existing field name.
+		base_rate = town.tax_rate
+	var rate: float = base_rate
+	# Economic power gently scales tax up/down.
+	rate *= lerp(0.9, 1.1, clamp(town.economic_power, 0.5, 1.5) - 0.5)
 	rate *= _status_tax_adjust(region_status)
 	rate *= _status_tax_adjust(world_status)
 	return rate
@@ -114,5 +145,4 @@ func _status_tax_adjust(status: GameEnums.Status) -> float:
 			return 1.0
 
 func _item_def(id: String) -> Item:
-	# TODO: Replace with your item DB lookup (preload cache, dictionary, ResourceLoader, etc.).
-	return null
+	return ItemDatabase.get_item(id)
