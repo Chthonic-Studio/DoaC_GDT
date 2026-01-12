@@ -1,0 +1,333 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3ypr41771r5y"]
+
+[ext_resource type="PackedScene" uid="uid://k108i7mxrha4" path="res://UI/main_ui.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://b7q3i2umsjqw5" path="res://Scripts/market_state.gd" id="2_jjvhh"]
+[ext_resource type="Script" uid="uid://creh5co5i2gfq" path="res://Scripts/region_node.gd" id="3_kry3j"]
+[ext_resource type="Script" uid="uid://bdxcvbfyywcg7" path="res://Scripts/town_node.gd" id="4_21xkr"]
+[ext_resource type="Script" uid="uid://cc0nb7boldv2b" path="res://Scripts/npc_node.gd" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://bsf1ybw5w63fy" path="res://Scripts/player_data.gd" id="6_344ge"]
+[ext_resource type="Script" uid="uid://beh73dfvlpbaq" path="res://Scripts/Globals/inventory_manager.gd" id="7_ynf5e"]
+[ext_resource type="Script" uid="uid://d1hq3urr16112" path="res://Scripts/player_flags.gd" id="8_hptm8"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Main_UI" parent="." instance=ExtResource("1_jjgbg")]
+visible = false
+
+[node name="Market_State" type="Node" parent="."]
+script = ExtResource("2_jjvhh")
+
+[node name="Robenbaurt_Kingdom" type="Node" parent="Market_State"]
+script = ExtResource("3_kry3j")
+
+[node name="Weglete" type="Node" parent="Market_State/Robenbaurt_Kingdom"]
+script = ExtResource("4_21xkr")
+
+[node name="Asketil" type="Node" parent="Market_State/Robenbaurt_Kingdom/Weglete"]
+script = ExtResource("5_kry3j")
+
+[node name="Jonas" type="Node" parent="Market_State/Robenbaurt_Kingdom/Weglete"]
+script = ExtResource("5_kry3j")
+
+[node name="Mayor_Margeriete" type="Node" parent="Market_State/Robenbaurt_Kingdom/Weglete"]
+script = ExtResource("5_kry3j")
+
+[node name="Pavia" type="Node" parent="Market_State/Robenbaurt_Kingdom/Weglete"]
+script = ExtResource("5_kry3j")
+
+[node name="Ruined_Watchtower" type="Node" parent="Market_State/Robenbaurt_Kingdom/Weglete"]
+script = ExtResource("4_21xkr")
+
+[node name="Florence" type="Node" parent="Market_State/Robenbaurt_Kingdom/Weglete/Ruined_Watchtower"]
+script = ExtResource("5_kry3j")
+
+[node name="Gerard" type="Node" parent="Market_State/Robenbaurt_Kingdom/Weglete/Ruined_Watchtower"]
+script = ExtResource("5_kry3j")
+
+[node name="Lakeborough" type="Node" parent="Market_State/Robenbaurt_Kingdom"]
+script = ExtResource("4_21xkr")
+
+[node name="Bertram" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough"]
+script = ExtResource("5_kry3j")
+
+[node name="Catrina" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough"]
+script = ExtResource("5_kry3j")
+
+[node name="Jon" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough"]
+script = ExtResource("5_kry3j")
+
+[node name="Orabella" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough"]
+script = ExtResource("5_kry3j")
+
+[node name="Howling_Sheep_Tavern" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough"]
+script = ExtResource("4_21xkr")
+
+[node name="Mister_Lu" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough/Howling_Sheep_Tavern"]
+script = ExtResource("5_kry3j")
+
+[node name="Edith" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough/Howling_Sheep_Tavern"]
+script = ExtResource("5_kry3j")
+
+[node name="Sayer" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough/Howling_Sheep_Tavern"]
+script = ExtResource("5_kry3j")
+
+[node name="River_Bend" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough"]
+script = ExtResource("4_21xkr")
+
+[node name="Herebert" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough/River_Bend"]
+script = ExtResource("5_kry3j")
+
+[node name="Isaac" type="Node" parent="Market_State/Robenbaurt_Kingdom/Lakeborough/River_Bend"]
+script = ExtResource("5_kry3j")
+
+[node name="Alenvin_County" type="Node" parent="Market_State/Robenbaurt_Kingdom"]
+script = ExtResource("3_kry3j")
+
+[node name="Cragbrook" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County"]
+script = ExtResource("4_21xkr")
+
+[node name="Ailith" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook"]
+script = ExtResource("5_kry3j")
+
+[node name="Ambrose" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook"]
+script = ExtResource("5_kry3j")
+
+[node name="Master_Reynold" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook"]
+script = ExtResource("5_kry3j")
+
+[node name="Wigmon" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook"]
+script = ExtResource("5_kry3j")
+
+[node name="Canyon_Pass" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook"]
+script = ExtResource("4_21xkr")
+
+[node name="Genevieve" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook/Canyon_Pass"]
+script = ExtResource("5_kry3j")
+
+[node name="Morris" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook/Canyon_Pass"]
+script = ExtResource("5_kry3j")
+
+[node name="Rolf" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook/Canyon_Pass"]
+script = ExtResource("5_kry3j")
+
+[node name="Stone_Quarry" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook"]
+script = ExtResource("4_21xkr")
+
+[node name="Harmen" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook/Stone_Quarry"]
+script = ExtResource("5_kry3j")
+
+[node name="Hugh" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Cragbrook/Stone_Quarry"]
+script = ExtResource("5_kry3j")
+
+[node name="Breezeport" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County"]
+script = ExtResource("4_21xkr")
+
+[node name="Adrienne" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Breezeport"]
+script = ExtResource("5_kry3j")
+
+[node name="Captain_Marius" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Breezeport"]
+script = ExtResource("5_kry3j")
+
+[node name="Gareth" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Breezeport"]
+script = ExtResource("5_kry3j")
+
+[node name="Old_Man_Finn" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Breezeport"]
+script = ExtResource("5_kry3j")
+
+[node name="Oakhaven" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Breezeport"]
+script = ExtResource("4_21xkr")
+
+[node name="Fulke" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Breezeport/Oakhaven"]
+script = ExtResource("5_kry3j")
+
+[node name="Rebecca" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Breezeport/Oakhaven"]
+script = ExtResource("5_kry3j")
+
+[node name="Stannard" type="Node" parent="Market_State/Robenbaurt_Kingdom/Alenvin_County/Breezeport/Oakhaven"]
+script = ExtResource("5_kry3j")
+
+[node name="Duchy_of_Northwaldia" type="Node" parent="Market_State/Robenbaurt_Kingdom"]
+script = ExtResource("3_kry3j")
+
+[node name="Taresfield" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia"]
+script = ExtResource("4_21xkr")
+
+[node name="Ashport" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia"]
+script = ExtResource("4_21xkr")
+
+[node name="Barlo" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia/Ashport"]
+script = ExtResource("5_kry3j")
+
+[node name="Captain_Lyra" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia/Ashport"]
+script = ExtResource("5_kry3j")
+
+[node name="Elian" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia/Ashport"]
+script = ExtResource("5_kry3j")
+
+[node name="Jorn" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia/Ashport"]
+script = ExtResource("5_kry3j")
+
+[node name="Kara" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia/Ashport"]
+script = ExtResource("5_kry3j")
+
+[node name="Creek_Camp" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia/Ashport"]
+script = ExtResource("4_21xkr")
+
+[node name="Edouard" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia/Ashport/Creek_Camp"]
+script = ExtResource("5_kry3j")
+
+[node name="Ursula" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia/Ashport/Creek_Camp"]
+script = ExtResource("5_kry3j")
+
+[node name="Wulfgar" type="Node" parent="Market_State/Robenbaurt_Kingdom/Duchy_of_Northwaldia/Ashport/Creek_Camp"]
+script = ExtResource("5_kry3j")
+
+[node name="Bothein_Grand_Duchy" type="Node" parent="Market_State/Robenbaurt_Kingdom"]
+script = ExtResource("3_kry3j")
+
+[node name="Sealtharbor" type="Node" parent="Market_State/Robenbaurt_Kingdom/Bothein_Grand_Duchy"]
+script = ExtResource("4_21xkr")
+
+[node name="Aegenwulf_Duchy" type="Node" parent="Market_State/Robenbaurt_Kingdom"]
+script = ExtResource("3_kry3j")
+
+[node name="Bormanhold" type="Node" parent="Market_State/Robenbaurt_Kingdom/Aegenwulf_Duchy"]
+script = ExtResource("4_21xkr")
+
+[node name="Joren" type="Node" parent="Market_State/Robenbaurt_Kingdom/Aegenwulf_Duchy/Bormanhold"]
+script = ExtResource("5_kry3j")
+
+[node name="Niesken" type="Node" parent="Market_State/Robenbaurt_Kingdom/Aegenwulf_Duchy/Bormanhold"]
+script = ExtResource("5_kry3j")
+
+[node name="Salvatore" type="Node" parent="Market_State/Robenbaurt_Kingdom/Aegenwulf_Duchy/Bormanhold"]
+script = ExtResource("5_kry3j")
+
+[node name="Tobias" type="Node" parent="Market_State/Robenbaurt_Kingdom/Aegenwulf_Duchy/Bormanhold"]
+script = ExtResource("5_kry3j")
+
+[node name="Cliffside_Trading_Post" type="Node" parent="Market_State/Robenbaurt_Kingdom/Aegenwulf_Duchy/Bormanhold"]
+script = ExtResource("4_21xkr")
+
+[node name="Marijke" type="Node" parent="Market_State/Robenbaurt_Kingdom/Aegenwulf_Duchy/Bormanhold/Cliffside_Trading_Post"]
+script = ExtResource("5_kry3j")
+
+[node name="Michel" type="Node" parent="Market_State/Robenbaurt_Kingdom/Aegenwulf_Duchy/Bormanhold/Cliffside_Trading_Post"]
+script = ExtResource("5_kry3j")
+
+[node name="Rudacel_Duchy" type="Node" parent="Market_State/Robenbaurt_Kingdom"]
+script = ExtResource("3_kry3j")
+
+[node name="Rockmount" type="Node" parent="Market_State/Robenbaurt_Kingdom/Rudacel_Duchy"]
+script = ExtResource("4_21xkr")
+
+[node name="Bron" type="Node" parent="Market_State/Robenbaurt_Kingdom/Rudacel_Duchy/Rockmount"]
+script = ExtResource("5_kry3j")
+
+[node name="Gregor_Rudacel" type="Node" parent="Market_State/Robenbaurt_Kingdom/Rudacel_Duchy/Rockmount"]
+script = ExtResource("5_kry3j")
+
+[node name="Joren" type="Node" parent="Market_State/Robenbaurt_Kingdom/Rudacel_Duchy/Rockmount"]
+script = ExtResource("5_kry3j")
+
+[node name="Lyra" type="Node" parent="Market_State/Robenbaurt_Kingdom/Rudacel_Duchy/Rockmount"]
+script = ExtResource("5_kry3j")
+
+[node name="Sira" type="Node" parent="Market_State/Robenbaurt_Kingdom/Rudacel_Duchy/Rockmount"]
+script = ExtResource("5_kry3j")
+
+[node name="Torvin" type="Node" parent="Market_State/Robenbaurt_Kingdom/Rudacel_Duchy/Rockmount"]
+script = ExtResource("5_kry3j")
+
+[node name="Windmill_Stop" type="Node" parent="Market_State/Robenbaurt_Kingdom/Rudacel_Duchy/Rockmount"]
+script = ExtResource("4_21xkr")
+
+[node name="Lina" type="Node" parent="Market_State/Robenbaurt_Kingdom/Rudacel_Duchy/Rockmount/Windmill_Stop"]
+script = ExtResource("5_kry3j")
+
+[node name="Phillip" type="Node" parent="Market_State/Robenbaurt_Kingdom/Rudacel_Duchy/Rockmount/Windmill_Stop"]
+script = ExtResource("5_kry3j")
+
+[node name="Hastel_Kingdom" type="Node" parent="Market_State"]
+script = ExtResource("3_kry3j")
+
+[node name="Aldburg" type="Node" parent="Market_State/Hastel_Kingdom"]
+script = ExtResource("4_21xkr")
+
+[node name="Elara" type="Node" parent="Market_State/Hastel_Kingdom/Aldburg"]
+script = ExtResource("5_kry3j")
+
+[node name="Kaelen" type="Node" parent="Market_State/Hastel_Kingdom/Aldburg"]
+script = ExtResource("5_kry3j")
+
+[node name="Lenard" type="Node" parent="Market_State/Hastel_Kingdom/Aldburg"]
+script = ExtResource("5_kry3j")
+
+[node name="Marie" type="Node" parent="Market_State/Hastel_Kingdom/Aldburg"]
+script = ExtResource("5_kry3j")
+
+[node name="Mayor_Theron" type="Node" parent="Market_State/Hastel_Kingdom/Aldburg"]
+script = ExtResource("5_kry3j")
+
+[node name="Silas" type="Node" parent="Market_State/Hastel_Kingdom/Aldburg"]
+script = ExtResource("5_kry3j")
+
+[node name="Greenwood" type="Node" parent="Market_State/Hastel_Kingdom"]
+script = ExtResource("4_21xkr")
+
+[node name="Mathens" type="Node" parent="Market_State/Hastel_Kingdom/Greenwood"]
+script = ExtResource("5_kry3j")
+
+[node name="Matriach_Elara" type="Node" parent="Market_State/Hastel_Kingdom/Greenwood"]
+script = ExtResource("5_kry3j")
+
+[node name="Olivier" type="Node" parent="Market_State/Hastel_Kingdom/Greenwood"]
+script = ExtResource("5_kry3j")
+
+[node name="Sibilla" type="Node" parent="Market_State/Hastel_Kingdom/Greenwood"]
+script = ExtResource("5_kry3j")
+
+[node name="Lumber_Crossing" type="Node" parent="Market_State/Hastel_Kingdom/Greenwood"]
+script = ExtResource("4_21xkr")
+
+[node name="Percival" type="Node" parent="Market_State/Hastel_Kingdom/Greenwood/Lumber_Crossing"]
+script = ExtResource("5_kry3j")
+
+[node name="Sigrith" type="Node" parent="Market_State/Hastel_Kingdom/Greenwood/Lumber_Crossing"]
+script = ExtResource("5_kry3j")
+
+[node name="Gresonne_Kingdom" type="Node" parent="Market_State"]
+script = ExtResource("3_kry3j")
+
+[node name="Rocheguet" type="Node" parent="Market_State/Gresonne_Kingdom"]
+script = ExtResource("4_21xkr")
+
+[node name="Captain_Albert" type="Node" parent="Market_State/Gresonne_Kingdom/Rocheguet"]
+script = ExtResource("5_kry3j")
+
+[node name="Lord_Tallebot" type="Node" parent="Market_State/Gresonne_Kingdom/Rocheguet"]
+script = ExtResource("5_kry3j")
+
+[node name="Melisent" type="Node" parent="Market_State/Gresonne_Kingdom/Rocheguet"]
+script = ExtResource("5_kry3j")
+
+[node name="Safiyya" type="Node" parent="Market_State/Gresonne_Kingdom/Rocheguet"]
+script = ExtResource("5_kry3j")
+
+[node name="Mushroom_Glade" type="Node" parent="Market_State/Gresonne_Kingdom/Rocheguet"]
+script = ExtResource("4_21xkr")
+
+[node name="Gerart" type="Node" parent="Market_State/Gresonne_Kingdom/Rocheguet/Mushroom_Glade"]
+script = ExtResource("5_kry3j")
+
+[node name="Susanna" type="Node" parent="Market_State/Gresonne_Kingdom/Rocheguet/Mushroom_Glade"]
+script = ExtResource("5_kry3j")
+
+[node name="Player_Data" type="Node" parent="."]
+script = ExtResource("6_344ge")
+
+[node name="Inventory" type="Node" parent="Player_Data"]
+script = ExtResource("7_ynf5e")
+
+[node name="Flags" type="Node" parent="Player_Data"]
+script = ExtResource("8_hptm8")
